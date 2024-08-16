@@ -121,7 +121,7 @@ struct DisconnectionReceiver<Config: ServerConfig>(
 
 #[derive(Resource)]
 pub struct PacketReceiver<Config: ServerConfig>(
-    UnboundedReceiver<(ServerConnection<Config>, Config::ClientPacket)>,
+    pub UnboundedReceiver<(ServerConnection<Config>, Config::ClientPacket)>,
 );
 
 fn create_setup_system<Config: ServerConfig>(address: SocketAddr) -> impl Fn(Commands) {
