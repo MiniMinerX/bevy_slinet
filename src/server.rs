@@ -120,7 +120,7 @@ struct DisconnectionReceiver<Config: ServerConfig>(
 );
 
 #[derive(Resource)]
-struct PacketReceiver<Config: ServerConfig>(
+pub struct PacketReceiver<Config: ServerConfig>(
     UnboundedReceiver<(ServerConnection<Config>, Config::ClientPacket)>,
 );
 
